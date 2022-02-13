@@ -1,0 +1,122 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Ruleta v0.4" Height="450" Width="800" BorderBrush="White">
+    <Window.Background>
+        <ImageBrush ImageSource="/bkg1 (2).bmp"/>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="369*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid Height="434" VerticalAlignment="Center" Grid.ColumnSpan="4">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="301" />
+                <RowDefinition Height="39" />
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="59*"/>
+
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" >
+                <TextBlock Text="Banca:" Height="20" Margin="30,0,0,0" VerticalAlignment="Bottom" FontFamily="Castellar" Foreground="Gold" FontWeight="Bold"/>
+                <TextBlock Name ="txtBanca" Height="20" Margin="5,0,0,0" TextAlignment="Left"  VerticalAlignment="Bottom"/>
+                <TextBlock Text ="Victorii Consecutive: " Height="20" Margin="500,0,0,0" VerticalAlignment="Bottom"/>
+                <TextBlock Name ="txtVictorii" Height="20" Margin="5,0,0,0" TextAlignment="Left" VerticalAlignment="Bottom"/>
+            </DockPanel>
+            <DockPanel Grid.Row="1" >
+                <Image x:Name="image1"  HorizontalAlignment="Left" Height="135" Margin="70,90,0,0" VerticalAlignment="Top" Width="140" Stretch="UniformToFill"/>
+                <Image x:Name="image2"  HorizontalAlignment="Left" Height="135" Margin="70,90,0,0" VerticalAlignment="Top" Width="140" Stretch="UniformToFill"/>
+                <Image x:Name="image3"  HorizontalAlignment="Left" Height="135" Margin="70,90,0,0" VerticalAlignment="Top" Width="140" Stretch="UniformToFill" IsEnabled="False"/>
+                <Button x:Name="btnDublu" Content="Dubleaza" Width="87" Height="50"  HorizontalAlignment="Right" Margin="0,0,20,0" Click="btnDublu_Click"/>
+            </DockPanel>
+            <DockPanel Grid.Row="2" >
+                <ToggleButton Name="btnPariu10"  Content="10" Width="50" Click="ToggleButton10_Click" Margin="30,0,0,0" Checked="btnPariu10_Checked"/>
+                <ToggleButton Name="btnPariu50"  Content="50" Width="50" Click="ToggleButton50_Click" Margin="0,0,0,0" Checked="btnPariu50_Checked"/>
+                <ToggleButton Name="btnPariu100"  Content="100" Width="50" Click="ToggleButton100_Click" Margin="0,0,0,0"/>
+                <ToggleButton Name="btnPariu500"  Content="500" Width="50" Click="ToggleButton500_Click" Margin="0,0,0,0"/>
+                <ToggleButton Name="btnPariuMax"  Content="Max" Width="50" Click="ToggleButtonMax_Click" Margin="0,0,0,0"/>
+                <Button  Content="Joaca" Name="btnJoaca" Width="121" Click="Button_Click" HorizontalAlignment="Stretch" />
+
+            </DockPanel>
+
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Margin="0,385,0,5" Width="790" Grid.ColumnSpan="4">
+            <TextBlock Text="Castigul curent: " HorizontalAlignment="Left" Height="37" Margin="38,0,0,0"  VerticalAlignment="Top" Width="118" FontSize="14"/>
+            <TextBlock Name ="txtCW" Height="16" Margin="152,3,540,0" TextAlignment="Left"  VerticalAlignment="Top"/>
+        </Grid>
+        <Canvas Name="Canvas1"  HorizontalAlignment="Left" Height="349" VerticalAlignment="Top" Width="800" Margin="0,31,0,0"  Grid.ColumnSpan="4" >
+            <Canvas.Background>
+                <ImageBrush ImageSource="/bkg3.jpg"/>
+            </Canvas.Background>
+            <Grid Width="768">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+
+                </Grid.RowDefinitions>
+
+                <DockPanel  Grid.Row="1" >
+                    <Button Name="btnRed"   Margin="10,0,0,0" Height="210" Width="144" BorderThickness="0,0,0,0" Click="btnRed_Click">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" TileMode="Tile" ImageSource="/1_heart.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnBlack" Height="210"  Width="144" BorderThickness="0,0,0,0" Click="btnBlack_Click">
+                        <Button.Foreground>
+                            <ImageBrush ImageSource="/1_pica.png" TileMode="None"/>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <ImageBrush ImageSource="/1_pica.png"/>
+                        </Button.BorderBrush>
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="/1_pica.png"/>
+                        </Button.OpacityMask>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/1_pica.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Image x:Name="dublu1" Height="120"  Width="88" Margin="10,0,0,0">
+                        <!--<Image.OpacityMask>
+                        <ImageBrush/>
+                    </Image.OpacityMask>-->
+                    </Image>
+                    <Image x:Name="dublu2" Height="120"  Width="88" Margin="10,0,0,0">
+                        <!--<Image.OpacityMask>
+                        <ImageBrush/>
+                    </Image.OpacityMask>-->
+                    </Image>
+                    <Image x:Name="dublu3" Height="120"  Width="88" Margin="10,0,11,0">
+                        <!--<Image.OpacityMask>
+                            <ImageBrush/>
+                        </Image.OpacityMask>-->
+                    </Image>
+                    <Image x:Name="dublu4" Height="120"  Width="88" HorizontalAlignment="Left">
+                        <!--<Image.OpacityMask>
+                        <ImageBrush/>
+                    </Image.OpacityMask>-->
+                    </Image>
+                </DockPanel>
+                <DockPanel Grid.Row="2" >
+                    <Button Name="btnClose" HorizontalAlignment="Right" Content="Inchide"  Height="44" Width="60" Click="btnClose_Click"/>
+                </DockPanel>
+            </Grid>
+        </Canvas>
+
+
+    </Grid>
+</Window>
