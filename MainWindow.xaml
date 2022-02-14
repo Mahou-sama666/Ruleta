@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+<Window x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -33,9 +33,9 @@
 
             <DockPanel Grid.Row="0" >
                 <TextBlock Text="Banca:" Height="20" Margin="30,0,0,0" VerticalAlignment="Bottom" FontFamily="Castellar" Foreground="Gold" FontWeight="Bold"/>
-                <TextBlock Name ="txtBanca" Height="20" Margin="5,0,0,0" TextAlignment="Left"  VerticalAlignment="Bottom"/>
-                <TextBlock Text ="Victorii Consecutive: " Height="20" Margin="500,0,0,0" VerticalAlignment="Bottom"/>
-                <TextBlock Name ="txtVictorii" Height="20" Margin="5,0,0,0" TextAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBlock Name ="txtBanca" Height="20" Margin="5,0,0,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
+                <TextBlock Text ="Victorii Consecutive: " Height="20" Margin="500,0,0,0" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
+                <TextBlock Name ="txtVictorii" Height="20" Margin="5,0,0,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
             </DockPanel>
             <DockPanel Grid.Row="1" >
                 <Image x:Name="image1"  HorizontalAlignment="Left" Height="135" Margin="70,90,0,0" VerticalAlignment="Top" Width="140" Stretch="UniformToFill"/>
@@ -55,10 +55,10 @@
 
         </Grid>
         <Grid  HorizontalAlignment="Left" Margin="0,385,0,5" Width="790" Grid.ColumnSpan="4">
-            <TextBlock Text="Castigul curent: " HorizontalAlignment="Left" Height="37" Margin="38,0,0,0"  VerticalAlignment="Top" Width="118" FontSize="14"/>
-            <TextBlock Name ="txtCW" Height="16" Margin="152,3,540,0" TextAlignment="Left"  VerticalAlignment="Top"/>
+            <TextBlock Text="Castigul curent: " HorizontalAlignment="Left" Height="37" Margin="38,0,0,0" FontFamily="Castellar" Foreground="Gold"  VerticalAlignment="Top" Width="118" FontSize="14"/>
+            <TextBlock Name ="txtCW" Height="16" Margin="152,3,540,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Top"/>
         </Grid>
-        <Canvas Name="Canvas1"  HorizontalAlignment="Left" Height="349" VerticalAlignment="Top" Width="800" Margin="0,31,0,0"  Grid.ColumnSpan="4" >
+        <Canvas Name="Canvas1"  HorizontalAlignment="Left" Height="349" VerticalAlignment="Top" Width="800" Margin="0,31,0,0"  Grid.ColumnSpan="4" Visibility="Collapsed" >
             <Canvas.Background>
                 <ImageBrush ImageSource="/bkg3.jpg"/>
             </Canvas.Background>
