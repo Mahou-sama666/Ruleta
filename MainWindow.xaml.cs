@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -96,6 +96,7 @@ namespace WpfApp1
         }
         private void Calcul(List<int> listResult)
         {
+            Fair_game();
             if ((listResult[0] == listResult[1]) && (listResult[1] == listResult[2]))
             {
                 Fair_game();
@@ -137,6 +138,7 @@ namespace WpfApp1
 
         private void ValidarePariuri()
         {
+            
             if (nCont < 500)
             {
                 btnPariu500.IsEnabled = false;
@@ -183,10 +185,12 @@ namespace WpfApp1
                 btnPariuMax.IsEnabled = true;
                 btnJoaca.IsEnabled = true;
             }
+            if (nMood == 0) btnJoaca.IsEnabled = false;
         }
 
         private void ToggleButton10_Click(object sender, RoutedEventArgs e)
         {
+            Mood();
             if (nMood == 6)
             {
                 btnJoaca.IsEnabled = false;
@@ -201,9 +205,11 @@ namespace WpfApp1
                 btnPariuMax.IsChecked = false;
                 nMood = 6;
             }
+            Mood();
         }
         private void ToggleButton100_Click(object sender, RoutedEventArgs e)
         {
+            Mood();
             if (nMood == 1)
             {
                 btnJoaca.IsEnabled = false;
@@ -218,9 +224,11 @@ namespace WpfApp1
                 btnPariuMax.IsChecked = false;
                 nMood = 1;
             }
+            Mood();
         }
         private void ToggleButton50_Click(object sender, RoutedEventArgs e)
         {
+            Mood();
             if (nMood == 2)
             {
                 btnJoaca.IsEnabled = false;
@@ -235,9 +243,11 @@ namespace WpfApp1
                 btnPariuMax.IsChecked = false;
                 nMood = 2;
             }
+            Mood();
         }
         private void ToggleButton500_Click(object sender, RoutedEventArgs e)
         {
+            Mood();
             if (nMood == 3)
             {
                 btnJoaca.IsEnabled = false;
@@ -252,9 +262,11 @@ namespace WpfApp1
                 btnPariuMax.IsChecked = false;
                 nMood = 3;
             }
+            Mood();
         }
         private void ToggleButtonMax_Click(object sender, RoutedEventArgs e)
         {
+            Mood();
             if (nMood == 4)
             {
                 btnJoaca.IsEnabled = false;
@@ -269,9 +281,14 @@ namespace WpfApp1
                 btnPariu500.IsChecked = false;
                 nMood = 4;
             }
-
+            Mood();
         }
-
+        private void Mood()
+        {
+            if (btnPariu10.IsChecked == false && btnPariu50.IsChecked == false && btnPariu100.IsChecked == false && btnPariu500.IsChecked == false && btnPariuMax.IsChecked == false)
+                nMood = 0;
+            ValidarePariuri();
+        }
         private void btnPariu50_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -331,6 +348,8 @@ namespace WpfApp1
                 // this.Canvas1.Visibility = Visibility.Collapsed;
             }
             txtCW.Text = nCW.ToString();
+            ValidarePariuri();
+            ValidareDuble();
         }
 
         private void SetRedOrBlackImages()
