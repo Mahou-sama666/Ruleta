@@ -45,7 +45,7 @@ namespace WpfApp1
         {
             if (nMood == 4 && nPariu > 250 && listResult[0] == listResult[1])
             {
-                if (listResult[1] == 3)
+                if (listResult[1] == 10)
                     listResult[1]--;
                 else listResult[1]++;
 
@@ -70,7 +70,7 @@ namespace WpfApp1
 
                 for (int j = 0; j <= 2; j++)
                 {
-                    int nr = random.Next(1, 4);
+                    int nr = random.Next(1, 10);
                     listResult.Add(nr);
                     var bitmapImage = new BitmapImage(new Uri(@"/Images/" + nr + ".bmp", UriKind.Relative));
 

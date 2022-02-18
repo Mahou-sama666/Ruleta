@@ -32,10 +32,19 @@
             </Grid.RowDefinitions>
 
             <DockPanel Grid.Row="0" >
-                <TextBlock Text="Banca:" Height="20" Margin="30,0,0,0" VerticalAlignment="Bottom" FontFamily="Castellar" Foreground="Gold" FontWeight="Bold"/>
-                <TextBlock Name ="txtBanca" Height="20" Margin="5,0,0,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
-                <TextBlock Text ="Victorii Consecutive: " Height="20" Margin="500,0,0,0" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
-                <TextBlock Name ="txtVictorii" Height="20" Margin="5,0,0,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Bottom"/>
+                <TextBlock Text="Banca :" Height="20" Margin="30,0,0,0" VerticalAlignment="Bottom" FontFamily="Castellar" Foreground="Gold" FontWeight="Normal"/>
+                <TextBlock Name ="txtBanca" Height="20" Margin="5,9,0,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" Width="28"/>
+                <TextBlock Text ="Victorii Consecutive : " Height="20" Margin="450,10,10,0" FontFamily="Castellar" Foreground="Gold" FontWeight="Normal" Width="168"/>
+                <TextBlock Name ="txtVictorii" Height="20" TextAlignment="Left" FontFamily  ="Castellar" Foreground="Gold" Width="24" Margin="0,10,10,0" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="2">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </DockPanel>
             <DockPanel Grid.Row="1" >
                 <Image x:Name="image1"  HorizontalAlignment="Left" Height="135" Margin="70,90,0,0" VerticalAlignment="Top" Width="140" Stretch="UniformToFill"/>
@@ -55,8 +64,8 @@
 
         </Grid>
         <Grid  HorizontalAlignment="Left" Margin="0,385,0,5" Width="790" Grid.ColumnSpan="4">
-            <TextBlock Text="Castigul curent: " HorizontalAlignment="Left" Height="37" Margin="38,0,0,0" FontFamily="Castellar" Foreground="Gold"  VerticalAlignment="Top" Width="118" FontSize="14"/>
-            <TextBlock Name ="txtCW" Height="16" Margin="152,3,540,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Top"/>
+            <TextBlock Text="Castigul curent: " HorizontalAlignment="Left" Height="37" Margin="38,0,0,0" FontFamily="Castellar" Foreground="Gold"  VerticalAlignment="Top" Width="157" FontSize="14" FontWeight="Normal"/>
+            <TextBlock Name ="txtCW" Height="16" Margin="200,3,527,0" TextAlignment="Left" FontFamily="Castellar" Foreground="Gold" VerticalAlignment="Top"/>
         </Grid>
         <Canvas Name="Canvas1"  HorizontalAlignment="Left" Height="349" VerticalAlignment="Top" Width="800" Margin="0,31,0,0"  Grid.ColumnSpan="4" Visibility="Collapsed" >
             <Canvas.Background>
@@ -116,6 +125,7 @@
                 </DockPanel>
             </Grid>
         </Canvas>
+
 
 
     </Grid>
